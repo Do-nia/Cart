@@ -1,0 +1,25 @@
+<div class="bg-log">
+  <section class="container">
+    <div class="row">
+
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" class="col-6 offset-3 card shadow">
+        <h3 class="text-uppercase mb-4">Sign in</h3>
+
+        <input class="w-75 mb-4 py-2 pl-3" formControlName="email" placeholder="Email">
+        <div class="alert alert-warning w-75" *ngIf="!myForm.get('email').valid && myForm.get('email').touched">
+          Email not valied!
+        </div>
+        <div>
+          <input type="password" class="w-75 mb-4 py-2 pl-3" formControlName="password" placeholder="Password">
+          <div class="alert alert-warning w-75" *ngIf="myForm.get('password').hasError('minlength')">
+            Password must be at least 6 characters
+          </div>
+        </div>
+        <button routerLink="/" class="btn btn-primary w-25 py-2 mb-4" type="submit">
+          Sign in
+        </button>
+        <span class="text-uppercase d-inline-block">don't have account?</span><h5 routerLink="/signUp" class="text-uppercase d-inline-block">register</h5>
+      </form>
+    </div>
+  </section>
+</div>

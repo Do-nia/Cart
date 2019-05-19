@@ -1,0 +1,31 @@
+<div class="bg-cart">
+  <section class="container">
+    <div *ngFor="let cart of displayCart" class="displayCart pt-5">
+      <div class="card mb-3" >
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src={{cart.path}} class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <div class="text-right">
+                <i class="card-title fas fa-times" (click)="onDeleteCart(cart)"></i>
+              </div>
+              <div class="data mt-2 ml-4">
+              <h5 class=" text-uppercase">{{cart.name}}</h5>
+
+              <h5 class="card-text mb-4">{{cart.price}}</h5>
+              <div class="card-text">
+                <button (click)="onDecreaseCart(cart)">-</button>
+                {{cart.quantity}}
+                <button (click)="onIncreaseCart(cart)">+</button>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+</div>

@@ -1,0 +1,19 @@
+<div class="main-bg p-5">
+  <section class="container">
+      <div class="row">
+       <div class="col-4" *ngFor="let product of productArr;let i=index">
+          <div class="card shadow p-3 mb-5 bg-white rounded">
+              <img routerLink="/Product" (click)="prodDetail(product)" src={{product.path}} class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title text-uppercase">{{product.name}}</h5>
+                <h5 class="d-inline">{{product.price}}</h5>
+                <a ><i class="fas fa-heart float-right ml-3"></i></a>
+                <a (click)="onCheckCart(product)" >
+                  <i class="fas fa-shopping-cart float-right" 
+                  [ngStyle]="{'color':product.status === true ? 'orange' : '#673E1B'}"></i></a>
+              </div>
+            </div>
+       </div>
+      </div>
+  </section>
+</div>

@@ -1,0 +1,41 @@
+<div class="bg-log">
+    <section class="container">
+      <div class="row">
+        <div class="col-6">
+          <img src="../../assets/hiko8.jpg" alt="" class="w-100 pt-4">
+        </div>
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" class="col-6 card shadow">
+          <h3 class="text-uppercase">Sign Up</h3>
+          <p class="mb-4">Please fill in this form to create an account</p>
+          <input class="w-75 mb-4 py-2 pl-3" formControlName="firstName" placeholder="First Name">
+          <!-- <input class="w-75 mb-4 py-2 pl-3" formControlName="firstName" placeholder="Last Name"> -->
+          <input class="w-75 mb-4 py-2 pl-3" formControlName="email" placeholder="Email">
+          <div class="alert alert-warning w-75" *ngIf="!myForm.get('email').valid && myForm.get('email').touched">
+            Email not valied!
+          </div>
+          <div>
+            <input type="password" class="w-75 mb-4 py-2 pl-3" formControlName="password" placeholder="Password">
+            <div class="alert alert-warning w-75" *ngIf="myForm.get('password').hasError('minlength')">
+              Password must be at least 6 characters
+            </div>
+            <div class="alert alert-warning w-75" *ngIf="myForm.get('password').hasError('maxlength')">
+              Password must be less than 12 characters
+            </div>
+          </div>
+          <div>
+            <input type="password" class="w-75 mb-4 py-2 pl-3" formControlName="confirmPassword"
+              placeholder="Confirm Password">
+            <div class="alert alert-warning w-75"
+              *ngIf="myForm.value.password !==myForm.value.confirmPassword && myForm.controls.confirmPassword.touched ">
+              Password must be matched
+            </div>
+          </div>
+          <div>
+          </div>
+          <button class="btn btn-primary w-25 py-2" type="submit">
+            Sign Up
+          </button>
+        </form>
+      </div>
+    </section>
+  </div>

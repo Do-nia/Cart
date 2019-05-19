@@ -1,0 +1,34 @@
+body{
+    background-color: #B0DEDB;
+
+}
+.item{
+    padding-top: 50px;
+}
+.card{
+    width: 700px;
+    /* max-width: 600px; */
+    margin: 0 auto;
+}
+.bg-cart{
+    background-color: #B0DEDB;
+    height: 1880px;
+}
+input{
+    width: 30px;
+}
+span{
+    background-color: #673E1B;
+    color: white;
+    padding: 4px 11px;
+    cursor: pointer;
+}
+.fa-times{
+    cursor: pointer;
+}
+button{
+background-color: #673E1B;
+border: none;
+color: white;
+padding: 2px 7px;
+}

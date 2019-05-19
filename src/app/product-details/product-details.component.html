@@ -1,0 +1,28 @@
+<div class="bg-cart">
+    <section class="container">
+        <div class="displayCart ">
+
+            <div class="card mb-3 ">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src={{prodDetails.path}} class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <div class="data mt-2 ml-4">
+                                <h5 class=" text-uppercase">{{prodDetails.name}}</h5>
+                                <h5 class="card-text mb-4">{{prodDetails.price}}</h5>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy text</p>
+                                <a><i class="fas fa-heart float-right ml-3"></i></a>
+                                <a (click)="onCheckCart(prodDetails)">
+                                    <i class="fas fa-shopping-cart float-right"
+                                        [ngStyle]="{'color':prodDetails.status === true ? 'orange' : '#673E1B'}"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
